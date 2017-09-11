@@ -10,9 +10,23 @@ import './css/app.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './components/App';
+import App from './components/App';
+import {Provider} from 'react-redux';
+import {store, framework7StateKernel} from './store';
+import {Framework7App, Statusbar, View} from 'framework7-react';
+
+import {routes} from './routes';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <Provider store={store}>
+      <Framework7App
+        themeType="ios"
+        routes={routes}                
+        router={false}
+        stateKernel={framework7StateKernel}>
+        <Statusbar />
+        <App />
+      </Framework7App>
+    </Provider>,
+    document.getElementById('root')
 );

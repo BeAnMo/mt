@@ -1,10 +1,15 @@
-import {About} from './components/pages/About';
-import {Form} from './components/pages/Form';
+import {History} from './components/pages/History';
+import FormContainer from './components/pages/Record/FormContainer';
+import App from './components/App';
 
 export const routes = [{
-    path: '/about/',
-    component: About
+    path: '/record/',
+    component: FormContainer
 }, {
-    path: '/form/',
-    component: Form
+    path: '/history/',
+    component: History
+},{
+    path: '/',
+    component: App
 }];
+
